@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Locales
     'accounts.apps.AccountsConfig',
     'patweets.apps.PatweetsConfig',
+    'api.apps.ApiConfig',
     #3rd party
     'rest_framework',
 ]
