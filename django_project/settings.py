@@ -43,22 +43,48 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     #3rd party
     'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'allauth',
+    'allauth.socialaccount',
+    'allauth.account',
+    'dj_rest_auth.registration',
+    'corsheaders',
     'drf_spectacular',
 ]
+
+SITE_ID = 1
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Patweets API',
+    'DESCRIPTION': 'Patweets API django course',
+    'VERSION': '1.0.0'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    "https://localhost:3000",
+    "https://localhost:8000",
+)
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',   
     ],
     'DEFAULT_SCHEMA_CLASS': 
         'drf_spectacular.openapi.AutoSchema',   
