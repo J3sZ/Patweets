@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #local
     'patweets.apps.PatweetsConfig',
+    'api.apps.ApiConfig',
     #3rd party
     'rest_framework',
 ]
