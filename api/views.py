@@ -1,9 +1,11 @@
 from rest_framework import generics
-
-# Create your views here.
 from patweets.models import Post
-from .serializers import PostSerializer
-
+from api.serializers import PostSerializer
+# Create your views here.
 class PostAPIView(generics.ListAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+class PostAPIDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
