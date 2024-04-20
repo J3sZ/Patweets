@@ -44,11 +44,11 @@ INSTALLED_APPS = [
     #3rd party
     'rest_framework',
     'rest_framework.authtoken',
-    'dj_rest_auth',
+    'rest_auth',
+    'django.contrib.sites',
     'allauth',
-    'allauth.socialaccount',
     'allauth.account',
-    'dj_rest_auth.registration',
+    'rest_auth.registration',
     'corsheaders',
     'drf_spectacular',
 ]
