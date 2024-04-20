@@ -1,0 +1,14 @@
+
+    {% block content %}
+
+        {% for post in posts %}
+
+            <p>{{ post.author }}</p>
+            <h1>{{ post.content }}</h1>
+            <h6>{{ post.created_at }}</h6>
+            <br>
+
+        
+        {% endfor %}
+
+    {% endblock content %}
